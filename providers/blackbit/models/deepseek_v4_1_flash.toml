@@ -1,0 +1,22 @@
+# Pricing, limits, and modalities from GET https://void.blackbit.sh/v1/models (accessed 2026-09-22).
+# https://docs.blackbit.sh/docs/void/models/language
+# Live catalog is text-only; the lab entry also advertises image input.
+# Effort: reasoning_effort = low|medium|high. Omit to keep the model default.
+# https://docs.blackbit.sh/docs/void/integrations/response-anatomy (accessed 2026-09-22)
+base_model = "deepseek/deepseek-v4.1-flash"
+attachment = false
+
+[[reasoning_options]]
+type = "effort"
+values = ["low", "medium", "high"]
+
+[cost]
+input = 0.15
+output = 0.6
+
+[limit]
+output = 1_000_000
+
+[modalities]
+input = ["text"]
+output = ["text"]

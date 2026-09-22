@@ -1,0 +1,19 @@
+# Pricing, limits, and modalities from GET https://void.blackbit.sh/v1/models (accessed 2026-09-22).
+# https://docs.blackbit.sh/docs/void/models/language
+# Effort: reasoning_effort = low|medium|high. Omit to keep the model default.
+# https://docs.blackbit.sh/docs/void/integrations/response-anatomy (accessed 2026-09-22)
+# cache_read = input * model_info.cache_read_multiplier (0.0083).
+base_model = "deepseek/deepseek-v4-pro"
+
+[[reasoning_options]]
+type = "effort"
+values = ["low", "medium", "high"]
+
+[cost]
+input = 1.74
+output = 3.48
+cache_read = 0.014442
+
+[limit]
+context = 1_048_600
+output = 1_048_600
