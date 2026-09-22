@@ -1,17 +1,14 @@
 # Pricing, limits, and modalities from GET https://void.blackbit.sh/v1/models (accessed 2026-09-22).
 # https://docs.blackbit.sh/docs/void/models/language
 # Live catalog accepts text and image. Lab entry also lists video.
-# Effort: reasoning_effort = low|medium|high. Omit to keep the model default.
-# https://docs.blackbit.sh/docs/void/integrations/response-anatomy (accessed 2026-09-22)
+# Moonshot authors no caller control for Kimi K2.7 Code.
+# VOID does not document a checkpoint-specific effort enum, so none is copied.
 base_model = "moonshotai/kimi-k2.7-code"
-
-[[reasoning_options]]
-type = "effort"
-values = ["low", "medium", "high"]
+reasoning_options = []
 
 [cost]
 input = 0.95
-output = 4
+output = 4.00
 
 [limit]
 context = 256_000
@@ -19,4 +16,3 @@ output = 32_768
 
 [modalities]
 input = ["text", "image"]
-output = ["text"]

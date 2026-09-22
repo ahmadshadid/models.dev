@@ -1,6 +1,7 @@
-# Pricing, limits, and modalities from GET https://void.blackbit.sh/v1/models (accessed 2026-09-22).
+# Pricing and limits from GET https://void.blackbit.sh/v1/models (accessed 2026-09-22).
 # https://docs.blackbit.sh/docs/void/models/language
-# Effort: reasoning_effort = low|medium|high. Omit to keep the model default.
+# First-party controls are enable_thinking and thinking_budget, which VOID does not document.
+# VOID's published caller field is reasoning_effort = low|medium|high.
 # https://docs.blackbit.sh/docs/void/integrations/response-anatomy (accessed 2026-09-22)
 base_model = "alibaba/qwen3.7-max"
 
@@ -9,8 +10,8 @@ type = "effort"
 values = ["low", "medium", "high"]
 
 [cost]
-input = 2.5
-output = 7.5
+input = 2.50
+output = 7.50
 
 [limit]
 context = 991_000

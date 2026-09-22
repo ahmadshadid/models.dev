@@ -1,15 +1,17 @@
-# Pricing, limits, and modalities from GET https://void.blackbit.sh/v1/models (accessed 2026-09-22).
+# Pricing and output cap from GET https://void.blackbit.sh/v1/models (accessed 2026-09-22).
 # https://docs.blackbit.sh/docs/void/models/language
-# Effort: reasoning_effort = low|medium|high. Omit to keep the model default.
+# Z.AI effective effort is high|max; low and medium collapse to high.
+# https://docs.z.ai/api-reference/llm/chat-completion (accessed 2026-09-22)
+# VOID does not document max. Authored level: high.
 # https://docs.blackbit.sh/docs/void/integrations/response-anatomy (accessed 2026-09-22)
 base_model = "zhipuai/glm-5.2"
 
 [[reasoning_options]]
 type = "effort"
-values = ["low", "medium", "high"]
+values = ["high"]
 
 [cost]
-input = 0.8
+input = 0.80
 output = 2.55
 
 [limit]

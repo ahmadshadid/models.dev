@@ -1,13 +1,17 @@
-# Pricing, limits, and modalities from GET https://void.blackbit.sh/v1/models (accessed 2026-09-22).
+# Pricing and limits from GET https://void.blackbit.sh/v1/models (accessed 2026-09-22).
 # https://docs.blackbit.sh/docs/void/models/language
-# Effort: reasoning_effort = low|medium|high. Omit to keep the model default.
-# https://docs.blackbit.sh/docs/void/integrations/response-anatomy (accessed 2026-09-22)
 # cache_read = input * model_info.cache_read_multiplier (0.0083).
+# VOID publishes reasoning_effort = low|medium|high and does not document
+# thinking.type or max.
+# https://docs.blackbit.sh/docs/void/integrations/response-anatomy (accessed 2026-09-22)
+# DeepSeek native effort is low|high|max; medium is not a distinct level.
+# https://api-docs.deepseek.com/guides/thinking_mode/ (accessed 2026-09-22)
+# Authored intersection: low|high.
 base_model = "deepseek/deepseek-v4-pro"
 
 [[reasoning_options]]
 type = "effort"
-values = ["low", "medium", "high"]
+values = ["low", "high"]
 
 [cost]
 input = 1.74
