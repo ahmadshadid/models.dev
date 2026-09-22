@@ -1,5 +1,6 @@
 # Pricing, context, and modalities from GET https://void.blackbit.sh/v1/models (accessed 2026-09-22).
 # https://docs.blackbit.sh/docs/void/models/language
+# limit.context = max_input_tokens; limit.output = max_output_tokens. max_input_tokens=1000000 max_output_tokens=131072 (GET /v1/models 2026-09-22).
 # Live catalog accepts text and image. Lab entry also lists video.
 # Toggle: thinking.type = enabled|disabled|adaptive
 # Effort: output_config.effort = low|high|max when thinking.type = adaptive
