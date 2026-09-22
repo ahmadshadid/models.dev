@@ -1,16 +1,17 @@
 # Pricing, context, and modalities from GET https://void.blackbit.sh/v1/models (accessed 2026-09-22).
 # https://docs.blackbit.sh/docs/void/models/language
 # Live catalog accepts text and image. Lab entry also lists video.
-# Moonshot effort is low|high|max, plus thinking.type.
+# Toggle: thinking.type = enabled|disabled|adaptive
+# Effort: output_config.effort = low|high|max when thinking.type = adaptive
 # https://platform.kimi.ai/docs/pricing/chat-k3 (accessed 2026-09-22)
-# VOID publishes reasoning_effort = low|medium|high and does not document max or thinking.type.
-# https://docs.blackbit.sh/docs/void/integrations/response-anatomy (accessed 2026-09-22)
-# Authored intersection: low|high.
 base_model = "moonshotai/kimi-k3"
 
 [[reasoning_options]]
+type = "toggle"
+
+[[reasoning_options]]
 type = "effort"
-values = ["low", "high"]
+values = ["low", "high", "max"]
 
 [cost]
 input = 3.00

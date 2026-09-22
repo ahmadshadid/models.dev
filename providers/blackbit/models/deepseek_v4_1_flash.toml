@@ -1,18 +1,18 @@
 # Pricing, output cap, and modalities from GET https://void.blackbit.sh/v1/models (accessed 2026-09-22).
 # https://docs.blackbit.sh/docs/void/models/language
 # Live catalog is text-only; the lab entry also advertises image input.
-# VOID publishes reasoning_effort = low|medium|high and does not document
-# thinking.type or max.
-# https://docs.blackbit.sh/docs/void/integrations/response-anatomy (accessed 2026-09-22)
-# DeepSeek native effort is low|high|max; medium is not a distinct level.
+# Toggle: thinking.type = enabled|disabled on /chat/completions.
+# Effort: reasoning_effort = low|high|max
 # https://api-docs.deepseek.com/guides/thinking_mode/ (accessed 2026-09-22)
-# Authored intersection: low|high.
 base_model = "deepseek/deepseek-v4.1-flash"
 attachment = false
 
 [[reasoning_options]]
+type = "toggle"
+
+[[reasoning_options]]
 type = "effort"
-values = ["low", "high"]
+values = ["low", "high", "max"]
 
 [cost]
 input = 0.15

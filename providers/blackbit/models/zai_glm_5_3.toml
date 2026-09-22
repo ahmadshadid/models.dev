@@ -1,14 +1,12 @@
 # Pricing and output cap from GET https://void.blackbit.sh/v1/models (accessed 2026-09-22).
 # https://docs.blackbit.sh/docs/void/models/language
-# Z.AI effort is low|high|max. VOID does not document max.
+# Effort: reasoning_effort = low|high|max. Thinking cannot be disabled.
 # https://docs.z.ai/guides/llm/glm-5.3 (accessed 2026-09-22)
-# https://docs.blackbit.sh/docs/void/integrations/response-anatomy (accessed 2026-09-22)
-# Authored intersection: low|high.
 base_model = "zhipuai/glm-5.3"
 
 [[reasoning_options]]
 type = "effort"
-values = ["low", "high"]
+values = ["low", "high", "max"]
 
 [cost]
 input = 0.70

@@ -1,15 +1,23 @@
 # Pricing, output cap, and modalities from GET https://void.blackbit.sh/v1/models (accessed 2026-09-22).
 # https://docs.blackbit.sh/docs/void/models/language
 # Live catalog accepts text and image. Lab entry also lists video and pdf.
-# Qwen effort is low|medium|xhigh. VOID does not document xhigh, enable_thinking, or thinking_budget.
+# Toggle: enable_thinking true|false
+# Effort: reasoning_effort = low|medium|xhigh. high is an alias of xhigh.
+# Budget: thinking_budget 0..262144, not combined with reasoning_effort.
 # https://docs.qwencloud.com/developer-guides/text-generation/thinking (accessed 2026-09-22)
-# https://docs.blackbit.sh/docs/void/integrations/response-anatomy (accessed 2026-09-22)
-# Authored intersection: low|medium.
 base_model = "alibaba/qwen3.8-max"
 
 [[reasoning_options]]
+type = "toggle"
+
+[[reasoning_options]]
 type = "effort"
-values = ["low", "medium"]
+values = ["low", "medium", "xhigh"]
+
+[[reasoning_options]]
+type = "budget_tokens"
+min = 0
+max = 262_144
 
 [cost]
 input = 2.00
